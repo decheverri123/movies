@@ -38,10 +38,10 @@
           <div class="w-[100px] font-bold">Runtime:</div>
           <div class="text-yellow-500">{{ movie.runtime }} minutes</div>
         </div>
-        <!-- Genre -->
+        <!-- Genre(s) -->
         <div class="flex">
           <div class="w-[100px] font-bold">Genres:</div>
-          <div class="value">
+          <div class="text-yellow-500 value">
             <span *ngFor="let genre of movie.genres">
               {{ genre.name }}
               <span
