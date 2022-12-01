@@ -3,6 +3,7 @@
   href=""
   class="item block min-h-[325px] rounded-md bg-slate-700 border-2 border-slate-400 relative"
   *ngIf="itemData"
+  [routerLink]="['/movie', itemData.id]"
 >
   <div
     class="absolute flex items-center px-3 border-0 rounded-md opacity-60 item-rating top-3 left-3 bg-slate-600"

@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply text-white;
+}
+
 .app-icon {
   font-family: "Material Icons";
   font-weight: normal;
