@@ -1,16 +1,8 @@
-<div class="container p-2 m-auto">
-  <h2 class="text-white">Trending Movies</h2>
-  <div
-    class="grid grid-cols-1 gap-6 text-white md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
-  >
-    <div class=""><app-item></app-item></div>
-    <div class=""><app-item></app-item></div>
-    <div class=""><app-item></app-item></div>
-    <div class=""><app-item></app-item></div>
-    <div class=""><app-item></app-item></div>
-    <div class=""><app-item></app-item></div>
-    <div class=""><app-item></app-item></div>
-    <div class=""><app-item></app-item></div>
-    <div class=""><app-item></app-item></div>
+<h2 class="flex text-white ml-28">{{ title }}</h2>
+<div
+  class="container grid grid-cols-1 gap-6 p-2 m-auto text-white md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+>
+  <div class="" *ngFor="let item of items">
+    <app-item [itemData]="item"></app-item>
   </div>
 </div>

@@ -1,21 +1,24 @@
 <!-- Movie Item -->
 <a
   href=""
-  class="item block min-h-[300px] rounded-md bg-slate-700 border-2 border-slate-400 relative"
+  class="item block min-h-[325px] rounded-md bg-slate-700 border-2 border-slate-400 relative"
+  *ngIf="itemData"
 >
   <div
     class="absolute flex items-center px-3 border-0 rounded-md opacity-60 item-rating top-3 left-3 bg-slate-600"
   >
     <!-- Star -->
     <i class="mr-1 text-yellow-500 scale-75 app-icon">star</i>
-    <span>7</span>/10
+    <span> {{ itemData.vote_average }} </span>/10
   </div>
   <div class="item-image">
     <img
-      src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"
+      [src]="'https://image.tmdb.org/t/p/original/' + itemData.poster_path"
       class="object-cover w-full border-2 h-[275px]"
     />
   </div>
   <!-- Title -->
-  <div class="m-2 font-bold item-title">The Vault</div>
+  <div class="flex items-center m-2 font-bold text-center item-title">
+    {{ itemData.title }}
+  </div>
 </a>

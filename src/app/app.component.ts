@@ -8,5 +8,4 @@ import { IPerson } from './person.model';
 })
 export class AppComponent {
   title = 'movies';
-  image = 'https://source.unsplash.com/random/800x600';
 }
