@@ -3,7 +3,11 @@
   class="text-white slider flex flex-col justify-between h-[35rem] bg-black relative"
 >
   <!-- Slide -->
-  <div class="relative flex slide h-[35rem]" *ngFor="let item of items">
+  <div
+    class="relative flex slide h-[35rem]"
+    *ngFor="let item of items"
+    @slideFade
+  >
     <!-- Slide Background -->
     <div class="relative flex flex-auto slide-bg">
       <img
