@@ -1,3 +1,63 @@
 <ng-container *ngIf="movie">
   <app-slider [items]="[movie]" [isBanner]="true"></app-slider>
+  <!-- Tabs -->
+  <div class="tabs">
+    <!-- Overview -->
+    <div class="flex justify-center">
+      <!-- Poster -->
+      <div class="flex">
+        <img [src]="imagesSizes.medium + movie.poster_path" class="w-max" />
+      </div>
+      <!-- Overview Details -->
+      <div class="">
+        <h2 class="">Overview</h2>
+        <p class="">{{ movie.overview }}</p>
+        <!-- Release -->
+        <div class="flex">
+          <div class="w-[100px] font-bold">Release Date:</div>
+          <div class="text-yellow-500">
+            {{ movie.release_date | date : "mediumDate" }}
+          </div>
+        </div>
+        <!-- Language -->
+        <div class="flex">
+          <div class="w-[100px] font-bold">Language:</div>
+          <div class="text-yellow-500">
+            {{ movie.original_language | uppercase }}
+          </div>
+        </div>
+        <!-- Revenue -->
+        <div class="flex">
+          <div class="w-[100px] font-bold">Revenue:</div>
+          <div class="text-yellow-500">
+            {{ movie.revenue | currency : "USD" : "symbol" : "1.2-2" }}
+          </div>
+        </div>
+        <!-- Runtime -->
+        <div class="flex">
+          <div class="w-[100px] font-bold">Runtime:</div>
+          <div class="text-yellow-500">{{ movie.runtime }} minutes</div>
+        </div>
+        <!-- Genre -->
+        <div class="flex">
+          <div class="w-[100px] font-bold">Genres:</div>
+          <div class="value">
+            <span *ngFor="let genre of movie.genres">
+              {{ genre.name }}
+              <span
+                *ngIf="
+                  movie.genres.length > 1 &&
+                  genre !== movie.genres[movie.genres.length - 1]
+                "
+                >,</span
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>hi</h1>
+    <h1>hi</h1>
+  </div>
 </ng-container>
