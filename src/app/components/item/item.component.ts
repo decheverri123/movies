@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
+import { IMAGES_SIZES } from 'src/app/constants/images-sizes';
 
 @Component({
   selector: 'app-item',
@@ -8,6 +9,7 @@ import { Movie } from '../../models/movie';
 })
 export class ItemComponent implements OnInit {
   @Input() itemData!: Movie;
+  imagesSizes = IMAGES_SIZES;
 
   constructor() {}
 
