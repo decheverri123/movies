@@ -1,38 +1,38 @@
+<!-- Slider -->
 <div
   class="text-white slider flex flex-col justify-between h-[35rem] bg-black relative"
 >
   <!-- Slide -->
-  <div class="relative flex slide h-[35rem]">
+  <div class="relative flex slide h-[35rem]" *ngFor="let item of items">
     <!-- Slide Background -->
     <div class="relative flex flex-auto slide-bg">
       <img
         class="object-cover w-full h-full"
-        src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"
+        [src]="'https://image.tmdb.org/t/p/original/' + item.backdrop_path"
       />
     </div>
     <!-- Pane -->
     <div class="absolute slider-pane w-[45%] top-20 left-20">
       <!-- Title -->
-      <h2 class="text-4xl name">The Addams Family</h2>
+      <h2 class="text-4xl name">
+        {{ item.title }}
+      </h2>
       <!-- Meta -->
-      <div class="flex mt-2 text-gray-400 meta">
+      <div class="flex mt-2 text-zinc-200 meta">
         <!-- Info -->
         <div class="info">
           <span class="flex items-center rating">
             <span class="mr-2 text-yellow-500 app-icon">star</span>
             <span class="text-xl text-white rating-value">7.5</span>
             <span>/10|</span>
-            <span> 463 reviews|</span>
-            <span> 2021</span>
+            <span> {{ item.vote_count }} reviews|</span>
+            <span> {{ item.release_date | date: "yyyy" }}</span>
           </span>
         </div>
       </div>
       <!-- Description -->
       <div class="mt-6 description">
-        Nearly 5,000 years after he was bestowed with the almighty powers of the
-        Egyptian gods—and imprisoned just as quickly—Black Adam is freed from
-        his earthly tomb, ready to unleash his unique form of justice on the
-        modern world."
+        {{ item.overview }}
       </div>
     </div>
   </div>
