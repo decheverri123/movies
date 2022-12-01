@@ -1,15 +1,31 @@
 <header>
   <nav
-    class="flex justify-between items-center p-4 h-[65px] bg-[#212121] border-b-[1px] border-[#424242]"
+    class="flex justify-between items-center p-4 h-[65px] bg-[#212121] border-b-[2px] border-[#424242]"
   >
-    <a href="" class="block navbar-logo"
+    <a href="" class="block"
       ><img src="assets/images/logo.png" class="w-[60px]"
     /></a>
-    <ul class="block p-0 m-0 list-none navbar-links">
-      <li class="inline mr-[15px] text-white"><a href="">Home</a></li>
-      <li class="inline mr-[15px] text-white"><a href="">Movies</a></li>
-      <li class="inline mr-[15px] text-white"><a href="">Tv Shows</a></li>
-      <li class="inline mr-[15px] text-white"><a href="">Genres</a></li>
+    <ul class="block p-0 m-0 list-none">
+      <li
+        class="inline mr-[15px] text-white hover:underline decoration-sky-300"
+      >
+        <a routerLink="/">Home</a>
+      </li>
+      <li
+        class="inline mr-[15px] text-white hover:underline decoration-sky-300"
+      >
+        <a routerLink="/movies">Movies</a>
+      </li>
+      <li
+        class="inline mr-[15px] text-white hover:underline decoration-sky-300"
+      >
+        <a routerLink="/tvshows">TV Shows</a>
+      </li>
+      <li
+        class="inline mr-[15px] text-white hover:underline decoration-sky-300"
+      >
+        <a routerLink="/genres">Genres</a>
+      </li>
     </ul>
   </nav>
 </header>
