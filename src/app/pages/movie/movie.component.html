@@ -58,8 +58,13 @@
     </div>
 
     <!-- Videos -->
-    <div class="movie-videos">
-      <pre>{{ movieVideos | json }}</pre>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+      <ng-container *ngFor="let movieVideo of movieVideos" class="">
+        <app-video-embed
+          [key]="movieVideo.key"
+          [site]="movieVideo.site"
+        ></app-video-embed>
+      </ng-container>
     </div>
     <h1>hi</h1>
   </div>
