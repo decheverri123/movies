@@ -59,4 +59,16 @@ export class MovieComponent implements OnInit, OnDestroy {
       this.movieCredits = movieCredits;
     });
   }
+
+  getCastInitials(castName: string) {
+    const pattern = /(?<=\s|^)[a-z]/gi;
+    const initials = castName.match(pattern);
+
+    console.log(
+      '🚀 ~ file: movie.component.ts:67 ~ MovieComponent ~ getCastInitials ~ initials',
+      castName,
+      initials
+    );
+    return initials?.join('').toUpperCase();
+  }
 }

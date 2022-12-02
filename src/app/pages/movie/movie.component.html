@@ -91,7 +91,7 @@
       </div>
       <div class="avatar placeholder" *ngIf="!actor.profile_path">
         <div class="w-24 rounded-full bg-neutral-focus text-neutral-content">
-          <span class="text-3xl">K</span>
+          <span class="text-3xl">{{ getCastInitials(actor.name) }}</span>
         </div>
       </div>
     </div>
