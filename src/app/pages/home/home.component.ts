@@ -15,15 +15,15 @@ export class HomeComponent implements OnInit {
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {
-    this.moviesService.getMovies('popular', 10).subscribe((movies) => {
+    this.moviesService.getMovies('popular', 20).subscribe((movies) => {
       this.popularMovies = movies;
     });
 
-    this.moviesService.getMovies('top_rated', 5).subscribe((movies) => {
+    this.moviesService.getMovies('top_rated', 15).subscribe((movies) => {
       this.topRatedMovies = movies;
     });
 
-    this.moviesService.getMovies('upcoming').subscribe((movies) => {
+    this.moviesService.getMovies('upcoming', 20).subscribe((movies) => {
       this.upcomingMovies = movies;
     });
   }
