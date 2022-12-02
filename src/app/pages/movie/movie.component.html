@@ -58,7 +58,9 @@
     </div>
 
     <!-- Videos -->
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+    <div
+      class="grid grid-cols-1 gap-4 px-6 m-auto md:grid-cols-3 lg:grid-cols-4 xl:grid-rows-6"
+    >
       <ng-container *ngFor="let movieVideo of movieVideos" class="">
         <app-video-embed
           [key]="movieVideo.key"
@@ -66,6 +68,16 @@
         ></app-video-embed>
       </ng-container>
     </div>
-    <h1>hi</h1>
+    <!-- Images -->
+    <div
+      class="grid grid-cols-1 gap-3 mx-auto md:grid-cols-2 lg:grid-cols-3 photos"
+    >
+      <ng-container *ngFor="let movieImage of movieImages?.backdrops">
+        <img
+          [src]="imagesSizes.medium + movieImage.file_path"
+          class="w-full h-full transition duration-500 ease-in-out cursor-pointer hover:scale-110"
+        />
+      </ng-container>
+    </div>
   </div>
 </ng-container>

@@ -1,7 +1,20 @@
-<iframe
-  [src]="getSafeUrl('https://youtube.com/embed/' + key)"
-  class="w-[350px] h-[200px]"
-  title="Youtube video"
-  frameBorder="0"
-  allowfullscreen
-></iframe>
+<ng-container [ngSwitch]="site">
+  <ng-container *ngSwitchCase="'YouTube'">
+    <iframe
+      [src]="videoUrl"
+      class="w-auto h-auto"
+      title="Youtube video"
+      frameBorder="0"
+      allowfullscreen
+    ></iframe>
+  </ng-container>
+  <ng-container *ngSwitchCase="'Vimeo'">
+    <iframe
+      [src]="getSafeUrl('https://player.vimeo.com/video/' + key)"
+      class="w-[350px] h-[200px]"
+      title="Vimeo video"
+      frameBorder="0"
+      allowfullscreen
+    ></iframe>
+  </ng-container>
+</ng-container>
