@@ -69,6 +69,7 @@
       </ng-container>
     </div>
     <!-- Images -->
+    <h1 class="text-4xl">Image Gallery</h1>
     <div
       class="grid grid-cols-1 gap-3 mx-auto md:grid-cols-2 lg:grid-cols-3 photos"
     >
@@ -78,6 +79,22 @@
           class="w-full h-full transition duration-500 ease-in-out cursor-pointer hover:scale-110"
         />
       </ng-container>
+    </div>
+  </div>
+  <!-- Cast -->
+  <h1 class="text-4xl">Cast</h1>
+  <div class="carousel rounded-box">
+    <div class="carousel-item" *ngFor="let actor of movieCredits.cast">
+      <div class="avatar" *ngIf="actor.profile_path">
+        <div class="w-24 rounded-full">
+          <img [src]="imagesSizes.large + actor.profile_path" />
+        </div>
+      </div>
+      <div class="avatar placeholder" *ngIf="!actor.profile_path">
+        <div class="w-24 rounded-full bg-neutral-focus text-neutral-content">
+          <span class="text-3xl">K</span>
+        </div>
+      </div>
     </div>
   </div>
 </ng-container>
